@@ -1,5 +1,17 @@
 import streamlit as st
-import google.generativeai as genai
+from google import genai
+
+# Lấy key AQ... từ Secrets của Streamlit
+api_key = st.secrets["GOOGLE_API_KEY"]
+
+# Khởi tạo client chuẩn cho token mới
+client = genai.Client(api_key=api_key)
+
+# Khi cần gọi chatbot để trả lời:
+response = client.models.generate_content(
+    model='gemini-2.5-flash',
+    contents='Câu hỏi của người dùng ở đây',
+)
 # ==========================================
 # 1. CẤU HÌNH TRANG & TỪ ĐIỂN SONG NGỮ (i18n)
 # ==========================================
