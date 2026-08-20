@@ -1,13 +1,5 @@
 import streamlit as st
 import google.generativeai as genai
-
-# Tự động lấy API Key từ kho bảo mật Secrets
-if "GOOGLE_API_KEY" in st.secrets:
-    api_key = st.secrets["AQ.Ab8RN6ISVghj6Xox2I70PmMRp9G6wE0_6lrvraEkYDzdGBwn6Q"]
-    genai.configure(api_key=api_key)
-else:
-    st.error("Chưa cấu hình GOOGLE_API_KEY trong Secrets!")
-    st.stop()
 # ==========================================
 # 1. CẤU HÌNH TRANG & TỪ ĐIỂN SONG NGỮ (i18n)
 # ==========================================
